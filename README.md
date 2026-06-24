@@ -43,9 +43,25 @@ OBSIDIAN_API_KEY=your_local_rest_api_key
 
 Do not commit `.env`. It contains the secret token for your vault.
 
-## Run
+## Daily Startup
 
 Start Obsidian and confirm the Local REST API plugin is enabled.
+
+You will usually keep three things running while ChatGPT is connected to Obsidian:
+
+- Obsidian
+- This proxy server
+- ngrok
+
+## Start the Proxy Server
+
+Open PowerShell in this project folder.
+
+If you are not already in the project folder, go there first:
+
+```powershell
+cd "C:\Users\suman\Documents\Obsidian Connector for GPT"
+```
 
 Start the proxy:
 
@@ -60,7 +76,11 @@ Obsidian MCP proxy running on http://127.0.0.1:3000
 Forwarding to https://127.0.0.1:27124
 ```
 
-Test the proxy:
+Keep this PowerShell window open. The proxy stops if you close the window or press `Ctrl+C`.
+
+## Test the Proxy
+
+Open a second PowerShell window and run:
 
 ```powershell
 curl.exe http://127.0.0.1:3000/
@@ -72,13 +92,33 @@ The response should include:
 "authenticated": true
 ```
 
-Start ngrok:
+If you see `"authenticated": false`, check your `.env` file and confirm Obsidian is open with the Local REST API plugin enabled.
+
+## Start ngrok
+
+Open a third PowerShell window.
+
+If `ngrok` is installed globally, run:
 
 ```powershell
 ngrok http http://127.0.0.1:3000
 ```
 
-Copy the HTTPS forwarding URL. Your ChatGPT MCP server URL is:
+If `ngrok.exe` is in the current folder instead, run:
+
+```powershell
+.\ngrok.exe http http://127.0.0.1:3000
+```
+
+Expected output includes a forwarding URL:
+
+```text
+Forwarding  https://xxxx.ngrok-free.app -> http://127.0.0.1:3000
+```
+
+Copy the HTTPS forwarding URL.
+
+Your ChatGPT MCP server URL is:
 
 ```text
 https://YOUR-NGROK-URL.ngrok-free.app/mcp/
