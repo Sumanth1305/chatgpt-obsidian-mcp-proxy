@@ -98,10 +98,10 @@ npm version should appear
 
 Clone or download this repository, then open PowerShell in the project folder.
 
-For this local setup, the project folder is:
+For example, if you cloned the repo into `C:\Projects`, go to:
 
 ```powershell
-cd "C:\Users\suman\Documents\Obsidian Connector for GPT"
+cd "C:\Projects\chatgpt-obsidian-mcp-proxy"
 ```
 
 ### 4. Install Dependencies
@@ -152,7 +152,7 @@ When the API key is included by the proxy later, the response should show:
 Open PowerShell in the project folder:
 
 ```powershell
-cd "C:\Users\suman\Documents\Obsidian Connector for GPT"
+cd "C:\Projects\chatgpt-obsidian-mcp-proxy"
 ```
 
 Start the proxy:
@@ -441,7 +441,7 @@ flowchart LR
 Start proxy:
 
 ```powershell
-cd "C:\Users\suman\Documents\Obsidian Connector for GPT"
+cd "C:\Projects\chatgpt-obsidian-mcp-proxy"
 npm start
 ```
 

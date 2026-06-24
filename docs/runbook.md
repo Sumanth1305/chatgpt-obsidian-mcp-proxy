@@ -77,7 +77,7 @@ npm -v
 ### 3. Install This Project
 
 ```powershell
-cd "C:\Users\suman\Documents\Obsidian Connector for GPT"
+cd "C:\Projects\chatgpt-obsidian-mcp-proxy"
 npm install
 Copy-Item .env.example .env
 ```
@@ -108,7 +108,7 @@ With the API key configured correctly, the proxied response should show:
 Open PowerShell:
 
 ```powershell
-cd "C:\Users\suman\Documents\Obsidian Connector for GPT"
+cd "C:\Projects\chatgpt-obsidian-mcp-proxy"
 npm start
 ```
 
@@ -330,7 +330,7 @@ flowchart LR
 ### Start proxy
 
 ```powershell
-cd "C:\Users\suman\Documents\Obsidian Connector for GPT"
+cd "C:\Projects\chatgpt-obsidian-mcp-proxy"
 npm start
 ```
 
