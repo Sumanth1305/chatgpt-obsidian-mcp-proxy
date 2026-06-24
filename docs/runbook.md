@@ -77,6 +77,7 @@ npm -v
 ### 3. Install This Project
 
 ```powershell
+cd "C:\Users\suman\Documents\Obsidian Connector for GPT"
 npm install
 Copy-Item .env.example .env
 ```
@@ -104,8 +105,18 @@ With the API key configured correctly, the proxied response should show:
 
 ### Step 2: Start the Proxy Server
 
+Open PowerShell:
+
 ```powershell
+cd "C:\Users\suman\Documents\Obsidian Connector for GPT"
 npm start
+```
+
+Expected output:
+
+```text
+Obsidian MCP proxy running on http://127.0.0.1:3000
+Forwarding to https://127.0.0.1:27124
 ```
 
 Keep this PowerShell window open.
@@ -138,6 +149,16 @@ Possible behavior:
 
 ### Step 4: Start ngrok
 
+Open another PowerShell window.
+
+If `ngrok.exe` is in your current folder:
+
+```powershell
+.\ngrok.exe http http://127.0.0.1:3000
+```
+
+If ngrok is available globally:
+
 ```powershell
 ngrok http http://127.0.0.1:3000
 ```
@@ -148,10 +169,18 @@ Expected output:
 Forwarding  https://xxxx.ngrok-free.app -> http://127.0.0.1:3000
 ```
 
+Copy the HTTPS URL.
+
+Example:
+
+```text
+https://3a94-xxxx.ngrok-free.app
+```
+
 Your ChatGPT MCP URL becomes:
 
 ```text
-https://xxxx.ngrok-free.app/mcp/
+https://3a94-xxxx.ngrok-free.app/mcp/
 ```
 
 Always add `/mcp/` at the end.
@@ -286,6 +315,49 @@ To fully shut down:
 - Keep Obsidian vault backups.
 - Avoid enabling destructive tools like delete, move, or rename until you are comfortable.
 
+## Mental Model to Remember
+
+```mermaid
+flowchart LR
+    A[Wrong Idea] --> B[Paste API key into OAuth fields]
+    C[Correct Idea] --> D[Use No Auth in ChatGPT]
+    D --> E[Proxy adds API key]
+    E --> F[Obsidian accepts request]
+```
+
+## Quick Command Cheat Sheet
+
+### Start proxy
+
+```powershell
+cd "C:\Users\suman\Documents\Obsidian Connector for GPT"
+npm start
+```
+
+### Test proxy
+
+```powershell
+curl.exe http://127.0.0.1:3000/
+```
+
+### Start ngrok
+
+```powershell
+ngrok http http://127.0.0.1:3000
+```
+
+### ChatGPT URL format
+
+```text
+https://YOUR-NGROK-URL.ngrok-free.app/mcp/
+```
+
+### ChatGPT Authentication
+
+```text
+No Auth
+```
+
 ## Final Success Checklist
 
 - [ ] Obsidian is open.
@@ -297,3 +369,15 @@ To fully shut down:
 - [ ] ChatGPT server URL ends with `/mcp/`.
 - [ ] ChatGPT Authentication is `No Auth`.
 - [ ] ChatGPT connector creates successfully.
+
+## Final Target State
+
+```text
+ChatGPT
+  -> ngrok HTTPS URL /mcp/
+  -> Local proxy on port 3000
+  -> Obsidian Local REST API on port 27124
+  -> Obsidian vault notes
+```
+
+Once this works, ChatGPT can help maintain notes, study plans, CTI dashboards, SOC investigation templates, and learning logs directly inside Obsidian.
