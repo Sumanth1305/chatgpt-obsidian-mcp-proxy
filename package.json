@@ -1,0 +1,24 @@
+{
+  "name": "chatgpt-obsidian-mcp-proxy",
+  "version": "1.0.0",
+  "description": "Local proxy that lets ChatGPT connect to Obsidian Local REST API MCP through ngrok without exposing the API key.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "check": "node --check server.js"
+  },
+  "keywords": [
+    "obsidian",
+    "mcp",
+    "chatgpt",
+    "ngrok",
+    "proxy"
+  ],
+  "author": "Sumanth",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "http-proxy-middleware": "^3.0.3"
+  }
+}
