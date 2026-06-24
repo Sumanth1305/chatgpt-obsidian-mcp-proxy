@@ -44,7 +44,15 @@ Proxy Server = Adds Obsidian API Key in the background
 
 ## One-Time Setup Checklist
 
-### 1. Obsidian Setup
+### 1. Install ChatGPT Desktop
+
+- [ ] Install the ChatGPT Desktop app.
+- [ ] Sign in to ChatGPT.
+- [ ] Confirm you can access Apps / Connectors and Developer Mode.
+
+This setup uses ChatGPT Apps / Connectors in Developer Mode, which should be configured from the desktop app.
+
+### 2. Obsidian Setup
 
 - [ ] Install Obsidian.
 - [ ] Install the Local REST API community plugin.
@@ -63,7 +71,7 @@ MCP endpoint:
 https://127.0.0.1:27124/mcp/
 ```
 
-### 2. Install Node.js
+### 3. Install Node.js
 
 Install Node.js LTS.
 
@@ -74,7 +82,7 @@ node -v
 npm -v
 ```
 
-### 3. Install This Project
+### 4. Install This Project
 
 ```powershell
 cd "C:\Projects\chatgpt-obsidian-mcp-proxy"
@@ -186,6 +194,8 @@ https://3a94-xxxx.ngrok-free.app/mcp/
 Always add `/mcp/` at the end.
 
 ## ChatGPT App Configuration
+
+Open the ChatGPT Desktop app.
 
 Go to ChatGPT Settings > Apps / Connectors > Developer Mode > Create App.
 

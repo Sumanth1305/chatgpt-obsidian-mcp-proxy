@@ -50,6 +50,7 @@ Proxy Server = Adds Obsidian API Key in the background
 
 ## Requirements
 
+- ChatGPT Desktop app
 - Obsidian
 - Obsidian Local REST API community plugin
 - Node.js LTS
@@ -125,6 +126,12 @@ PORT=3000
 ```
 
 Do not commit `.env`. It contains the secret token for your vault.
+
+### 6. Install ChatGPT Desktop
+
+Install and sign in to the ChatGPT Desktop app before creating the connector.
+
+This setup uses ChatGPT Apps / Connectors in Developer Mode, which should be configured from the desktop app.
 
 ## Daily Startup Procedure
 
@@ -235,6 +242,8 @@ https://3a94-xxxx.ngrok-free.app/mcp/
 Always add `/mcp/` at the end when giving the URL to ChatGPT.
 
 ## ChatGPT App Configuration
+
+Open the ChatGPT Desktop app.
 
 Go to:
 
